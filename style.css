@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+:root{
+    --main:#fafafa;
+    --second:#2f2f2f;
+    --outline: #d6d6d6;
+}
+body{
+    margin: 0;
+    background: var(--second);
+    height: 100vh; display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+   
+    padding: 2rem 0;
+    perspective: 100rem
+}
+/**16px*/
+.ticket{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3.43rem;
+    /* background: radial-gradient(circle at top, transparent 2.4rem, var(--main) 2.5rem); */
+    border-radius: .7rem .7rem 0 0;
+    width: 33.375rem;
+    font-family: 'Roboto Mono','Noto Sans TC', monospace;
+    font-size: 1rem;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+@media only screen and (max-width: 600px) {
+    :root {
+      font-size: .6rem;
+    }
+  }
+.icon{
+    position: absolute;
+    width: 3.9rem;
+    right: 2rem;
+}
+.speratedLine{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+.backside > .speratedLine{
+    bottom: 9.29rem;
+}
+.textBox{
+    display: flex;
+    flex-direction: column;
+}
+.textValue{
+    font-size: 1.75rem;
+}
+.textBox.date > .textValue{
+margin: .5rem 0 3.3rem 0;
+}
+.textBox.time > .textValue{
+margin: .5rem 0 2.625rem 0;
+}
+.textBox.name > .textValue{
+margin: .5rem 0 2.25rem 0;
+text-transform: uppercase;
+}
+.qr-code{
+    width: 4.75rem;
+    height: 4.75rem;
+    background-color: antiquewhite;
+    margin-bottom: 2.625rem;
+}
+.upperPart{
+    position: relative;
+    padding:4.75rem 2rem 0 2rem;
+}
+.bottomPart{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.18rem 2rem 3.43rem 2rem;
+}
+/* .bottomPart::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 3.6rem;
+    background: radial-gradient(circle at bottom, transparent 2.4rem, var(--main) 2.5rem);
+    left: 0;
+    bottom: -3.43rem;
+    border-radius: 0 0 .7rem .7rem;
+} */
+.user-info{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+.user-icon{
+    width: 3.68rem;
+    height: 3.68rem;
+    background-color: rgb(160, 160, 160);
+    border-radius: 100%;
+}
+.backside{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: radial-gradient(circle at top, transparent 2.4rem, var(--main) 2.5rem); */
+    top:0;
+    left: 0;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    border-radius: .7rem .7rem 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+/* .backside::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 26%;
+    left: 0;
+    bottom: -25%;
+    background: radial-gradient(circle at bottom, transparent 2.4rem, var(--main) 2.5rem);
+    border-radius: 0 0 .7rem .7rem;
+} */
+.icon-huge{
+    width: 12.5rem;
+}
+.ticket-wrapper{
+    position: relative;
+    transform-style: preserve-3d;
+    
+    border-radius: .7rem;
+}
+.ticket-wrapper.smooth{
+    transition: transform 500ms ease-in-out;
+}
+.backside::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: url(./background.svg);
+    background-size: 3.25rem;
+    background-repeat: repeat;
+    border-radius: .7rem;
+    background-color: rgba(255,255,255,.9);
+}
+.backside::before{
+    content: "";
+    position: absolute;
+    top: 0;z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: .7rem;
+    background: linear-gradient(125deg, 
+        rgba(118,56,250,1) 0%, 
+        rgba(211,0,197,1) 20%, 
+        rgba(255,0,105,1) 30%, 
+        rgba(255,122,0,1) 40%,
+        rgba(255,214,0,1) 50%,
+        rgba(255,122,0,1) 60%,
+        rgba(255,0,105,1) 70%, 
+        rgba(211,0,197,1) 80%,
+        rgba(118,56,250,1) 100%
+        );
+}
+.ticket::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: url(./background.svg);
+    background-size: 3.25rem;
+    background-repeat: repeat;
+    border-radius: .7rem;
+    background-color: rgba(255,255,255,.9);
+}
+.ticket::before{
+    content: "";
+    position: absolute;
+    top: 0;z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: .7rem;
+    background: linear-gradient(125deg, 
+    rgba(118,56,250,1) 0%, 
+    rgba(211,0,197,1) 10%, 
+    rgba(255,0,105,1) 20%, 
+    rgba(255,122,0,1) 30%,
+    rgba(255,214,0,1) 40%,
+    rgba(255,122,0,1) 50%,
+    rgba(255,0,105,1) 60%, 
+    rgba(211,0,197,1) 70%
+    );
+}
+.BLACK-DOT{
+    width: 4.875rem;
+    height: 4.875rem;
+}
